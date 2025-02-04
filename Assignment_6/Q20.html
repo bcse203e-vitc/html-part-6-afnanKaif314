@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Count</title>
+</head>
+<body>
+    <h1>Count the Occurrences of Each Character in a String</h1>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="countCharacters()">Count</button>
+    <p id="result"></p>
+
+    <script>
+        function countCharacters() {
+            const inputString = document.getElementById('inputString').value;
+            const charCount = {};
+
+            for (let char of inputString) {
+                if (char in charCount) {
+                    charCount[char]++;
+                } else {
+                    charCount[char] = 1;
+                }
+            }
+
+
+            document.getElementById('result').innerText = `Character count: ${JSON.stringify(charCount)}`;
+        }
+    </script>
+</body>
+</html>
